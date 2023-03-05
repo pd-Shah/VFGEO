@@ -29,6 +29,8 @@ Verify that Docker is installed correctly by running the hello-world image:
 
 ```bash
 sudo docker run hello-world
+
+docker-compose --version
 ```
 
 If Docker is installed correctly, you should see a message that says “Hello from Docker!” followed by some additional information.
