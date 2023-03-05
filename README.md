@@ -21,7 +21,8 @@ Update the package index:
 ```bash
 
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+pip install docker-compose
 ```
 
 Verify that Docker is installed correctly by running the hello-world image:
