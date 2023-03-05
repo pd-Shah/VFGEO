@@ -1,40 +1,31 @@
 version: "3.7"
-services:
-  postgres:
-    container_name: postgres
-    image: postgres
-    restart: always
-    ports:
-      - 5432:5432
-    volumes:
-      - ./volumes/postgres_volume/:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_DB=vfgeo
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-  redis:
-    container_name: redis
-    image: redis
-    restart: always
-    ports:
-      - 6379:6379
-    volumes:
-      - ./volumes/redis_volume/:/data/
-  vfgeo:
-    container_name: vfgeo
-    build: .
-    restart: always
-    depends_on:
-      - redis
-    ports:
-      - 8000:8000
-    volumes:
-      - .:/vfgeo/
-    working_dir: /vfgeo
-    environment:
-      - DEBUG=1
-      - DJANGO_ENV=development
 
-    command: bash -c  "python manage.py makemigrations &&
-                       python manage.py migrate &&
-                       python manage.py runserver 0.0.0.0:8000"
+services:
+  db:
+    image: postgis/postgis
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: geo_api
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    network_mode: "host"
+
+  # app:
+  #   build: . 
+  #   restart: always
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #     - "8000:8000"
+  #   depends_on:
+  #     - db
+  #   command: bash -c  "python manage.py makemigrations &&
+  #                      python manage.py migrate &&
+  #                      python manage.py runserver 0.0.0.0:8000"
+  #   network_mode: "host"
+
+volumes:
+    db-data:
+    app:

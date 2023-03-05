@@ -2,6 +2,7 @@
 
 This project is a CRUD REST API for GeoJSON feature objects. It allows users to create, read, update, and delete GeoJSON features through a REST API.
 Technologies Used
+
 ```bash
     Python 3
     Django
@@ -24,12 +25,12 @@ sudo apt-get install docker-ce
 ```
 
 Verify that Docker is installed correctly by running the hello-world image:
+
 ```bash
     sudo docker run hello-world
 ```
 
 If Docker is installed correctly, you should see a message that says “Hello from Docker!” followed by some additional information.
-
 
 ## Clone the repository:
 
@@ -39,12 +40,14 @@ git clone https://github.com/pd-Shah/VFGEO
 ```
 
 ## Running
-To run the project using Docker Compose, follow these steps:
-```bash
-docker-compose up
-```
-The command will start the PostgreSQL and the Django server. Once the server is running, you should be able to access the API at http://localhost:8000/.
 
+To run the project using Docker Compose, follow these steps:
+
+```bash
+sudo docker-compose up --build
+```
+
+The command will start the PostgreSQL and the Django server. Once the server is running, you should be able to access the API at http://localhost:8000/.
 
 ## Authentication
 
