@@ -4,12 +4,12 @@ This project is a CRUD REST API for GeoJSON feature objects. It allows users to 
 Technologies Used
 
 ```bash
-    Python 3
-    Django
-    Django REST framework
-    PostGIS
-    GeoPandas
-    GDAL
+Python 3
+Django
+Django REST framework
+PostGIS
+GeoPandas
+GDAL
 ```
 
 ## Setup Instructions
@@ -27,7 +27,7 @@ sudo apt-get install docker-ce
 Verify that Docker is installed correctly by running the hello-world image:
 
 ```bash
-    sudo docker run hello-world
+sudo docker run hello-world
 ```
 
 If Docker is installed correctly, you should see a message that says “Hello from Docker!” followed by some additional information.
@@ -35,7 +35,6 @@ If Docker is installed correctly, you should see a message that says “Hello fr
 ## Clone the repository:
 
 ```bash
-
 git clone https://github.com/pd-Shah/VFGEO
 ```
 
@@ -51,4 +50,4 @@ The command will start the PostgreSQL and the Django server. Once the server is 
 
 ## Authentication
 
-This project uses JSON Web Tokens (JWTs) for authentication. To obtain a token.
+This project uses JSON Web Tokens (JWTs) for authentication.

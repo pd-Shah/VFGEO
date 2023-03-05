@@ -37,7 +37,7 @@ pathspec==0.9.0
 platformdirs==2.4.0
 psycopg2-binary==2.9.5
 PyJWT==1.7.1
-pyparsing==3.0.9
+pyparsing==3.0.7
 pyproj==3.0.1
 pyrsistent==0.18.0
 python-dateutil==2.8.2
