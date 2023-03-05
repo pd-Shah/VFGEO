@@ -10,22 +10,17 @@ services:
       POSTGRES_DB: geo_api
     volumes:
       - db-data:/var/lib/postgresql/data/
-    network_mode: "host"
 
-  # app:
-  #   build: . 
-  #   restart: always
-  #   volumes:
-  #     - .:/app
-  #   ports:
-  #     - "8000:8000"
-  #   depends_on:
-  #     - db
-  #   command: bash -c  "python manage.py makemigrations &&
-  #                      python manage.py migrate &&
-  #                      python manage.py runserver 0.0.0.0:8000"
-  #   network_mode: "host"
-
+  app:
+    build: .
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: bash -c  "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000 && python drop_db.py"
 volumes:
-    db-data:
-    app:
+  db-data:
+  app:
